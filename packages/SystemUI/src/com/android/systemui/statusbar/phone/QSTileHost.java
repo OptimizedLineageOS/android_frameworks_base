@@ -62,6 +62,7 @@ import com.android.systemui.qs.tiles.SoundTile;
 import com.android.systemui.qs.tiles.NfcTile;
 import com.android.systemui.qs.tiles.NightDisplayTile;
 import com.android.systemui.qs.tiles.RotationLockTile;
+import com.android.systemui.qs.tiles.MusicTile;
 
 import com.android.systemui.qs.tiles.ScreenshotTile;
 
@@ -472,6 +473,7 @@ public class QSTileHost implements QSTile.Host, Tunable {
         else if (tileSpec.equals("sync")) return new SyncTile(this);
         else if (tileSpec.equals("usb_tether")) return new UsbTetherTile(this);
         else if (tileSpec.equals("volume_panel")) return new VolumeTile(this);
+        else if (tileSpec.equals("music")) return new MusicTile(this);
         // Intent tiles.
         else if (tileSpec.startsWith(IntentTile.PREFIX)) return IntentTile.create(this,tileSpec);
         else if (tileSpec.startsWith(CustomTile.PREFIX)) return CustomTile.create(this,tileSpec);
