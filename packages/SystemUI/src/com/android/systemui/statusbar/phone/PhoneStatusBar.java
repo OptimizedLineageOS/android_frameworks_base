@@ -419,6 +419,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
     // settings
     private QSPanel mQSPanel;
 
+    private boolean mShow4G;
+
     // top bar
     BaseStatusBarHeader mHeader;
     protected KeyguardStatusBarView mKeyguardStatusBar;
@@ -511,7 +513,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                     Settings.System.STATUS_BAR_SHOW_TICKER),
                     false, this, UserHandle.USER_ALL);
 	
-           
+           resolver.registerContentObserver(Settings.System.getUriFor(
+                   Settings.System.SHOW_FOURG), false, this, UserHandle.USER_ALL);
         }
 
         @Override
@@ -527,6 +530,23 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 			initTickerView();
 		}
 		
+		if (uri.equals(Settings.System.getUriFor(
+                    Settings.System.SHOW_FOURG))) {
+                    mShow4G = Settings.System.getIntForUser(
+                            mContext.getContentResolver(),
+                            Settings.System.SHOW_FOURG,
+                            0, UserHandle.USER_CURRENT) == 1;
+                mNetworkController.onConfigurationChanged();
+            }
+
+            update();
+		
+	}
+	
+	@Override
+	public void update() {
+		 boolean mShow4G = Settings.System.getIntForUser(resolver,
+                    Settings.System.SHOW_FOURG, 0, UserHandle.USER_CURRENT) == 1;
 	}
        
     }
