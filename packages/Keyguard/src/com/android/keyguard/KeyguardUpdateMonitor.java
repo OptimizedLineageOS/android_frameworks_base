@@ -66,6 +66,7 @@ import android.telephony.SubscriptionManager;
 import android.telephony.SubscriptionManager.OnSubscriptionsChangedListener;
 import android.telephony.TelephonyManager;
 import android.util.ArraySet;
+import android.util.BoostFramework;
 import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
@@ -212,6 +213,32 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
     private TrustManager mTrustManager;
     private UserManager mUserManager;
     private int mFingerprintRunningState = FINGERPRINT_STATE_STOPPED;
+
+    private BoostFramework mPerf = null;
+    private boolean lIsPerfBoostEnabled;
+    private int[] mBoostParamVal;
+    private int mBoostDuration;
+
+    private PocketManager mPocketManager;
+    private boolean mIsDeviceInPocket;
+    private final IPocketCallback mPocketCallback = new IPocketCallback.Stub() {
+        @Override
+        public void onStateChanged(boolean isDeviceInPocket, int reason) {
+            boolean changed = false;
+            if (reason == PocketManager.REASON_SENSOR) {
+                if (isDeviceInPocket != mIsDeviceInPocket) {
+                    mIsDeviceInPocket = isDeviceInPocket;
+                    changed = true;
+                }
+            } else {
+                changed = isDeviceInPocket != mIsDeviceInPocket;
+                mIsDeviceInPocket = false;
+            }
+            if (changed) {
+                mHandler.sendEmptyMessage(MSG_POCKET_STATE_CHANGED);
+            }
+        }
+    };
 
     private final Handler mHandler = new Handler() {
         @Override
@@ -455,6 +482,13 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
         // wake-up (if Keyguard is not showing), so we don't need to listen until Keyguard is
         // fully gone.
         mFingerprintAlreadyAuthenticated = isUnlockingWithFingerprintAllowed();
+
+        // Intercept the authorized FP unlock while the screen is off
+        if (lIsPerfBoostEnabled && !mScreenOn) {
+            Log.i(TAG, "Dispatching FP unlock boost.");
+            mPerf.perfLockAcquire(mBoostDuration, mBoostParamVal);
+        }
+
         for (int i = 0; i < mCallbacks.size(); i++) {
             KeyguardUpdateMonitorCallback cb = mCallbacks.get(i).get();
             if (cb != null) {
@@ -1146,6 +1180,20 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
                     }, TAG);
         } catch (RemoteException e) {
             e.rethrowAsRuntimeException();
+        }
+
+        // Initialise FP unlock boost
+        lIsPerfBoostEnabled = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_enableKeypressBoost) &&
+                mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_enableFPUnlockBoost);
+        mBoostParamVal = mContext.getResources().getIntArray(
+                com.android.internal.R.array.keypressboost_strong_param_value);
+        mBoostDuration = mContext.getResources().getInteger(
+                com.android.internal.R.integer.fpunlockboost_duration);
+
+        if (lIsPerfBoostEnabled) {
+            mPerf = new BoostFramework();
         }
 
         IntentFilter strongAuthTimeoutFilter = new IntentFilter();
