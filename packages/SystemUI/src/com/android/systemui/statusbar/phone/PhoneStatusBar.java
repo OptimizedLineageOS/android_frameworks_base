@@ -400,7 +400,8 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
     private Ticker mTicker;
     private View mTickerView;
     private boolean mTicking;
-
+    private TextView mCenterClock;
+    private int mClockLocation;
     int mPixelFormat;
     Object mQueueLock = new Object();
 
@@ -505,6 +506,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
            resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_SHOW_TICKER),
                     false, this, UserHandle.USER_ALL);
+	   resolver.registerContentObserver(Settings.System.getUriFor(
+                    Settings.System.STATUSBAR_CLOCK_STYLE),
+                    false, this, UserHandle.USER_ALL);
             update();
         }
 
@@ -525,7 +529,9 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 
         public void update() {
             ContentResolver resolver = mContext.getContentResolver();
-          
+            mClockLocation = Settings.System.getIntForUser(
+               resolver, Settings.System.STATUSBAR_CLOCK_STYLE, 0,
+                UserHandle.USER_CURRENT);
         }
     }
 
@@ -1012,7 +1018,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
         if (ENABLE_LOCKSCREEN_WALLPAPER) {
             mLockscreenWallpaper = new LockscreenWallpaper(mContext, this, mHandler);
         }
-	
+	 mCenterClock = (TextView) mStatusBarWindow.findViewById(R.id.center_clock);
 	 mTickerEnabled = Settings.System.getIntForUser(mContext.getContentResolver(),
                     Settings.System.STATUS_BAR_SHOW_TICKER,
                     mContext.getResources().getBoolean(R.bool.enable_ticker)
@@ -3722,8 +3728,10 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             mStatusBarContents.setVisibility(View.GONE);
             mStatusBarContents.startAnimation(loadAnim(com.android.internal.R.anim.push_up_out,
                     null));
-            //mClockView.setVisibility(View.GONE);
-            //mClockView.startAnimation(loadAnim(com.android.internal.R.anim.push_up_out, null));
+           if (mClockLocation == 1) {
+                mCenterClock.setVisibility(View.GONE);
+                mCenterClock.startAnimation(loadAnim(com.android.internal.R.anim.push_up_out, null));
+            }
             mTickerView.setVisibility(View.VISIBLE);
             mTickerView.startAnimation(loadAnim(com.android.internal.R.anim.push_up_in, null));
         }
@@ -3737,8 +3745,10 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             mTickerView.setVisibility(View.GONE);
             mTickerView.startAnimation(loadAnim(com.android.internal.R.anim.push_down_out,
                         mTickingDoneListener));
-            //mClockView.setVisibility(View.VISIBLE);
-            //mClockView.startAnimation(loadAnim(com.android.internal.R.anim.push_down_in, null));
+          if (mClockLocation == 1) {
+                mCenterClock.setVisibility(View.VISIBLE);
+                mCenterClock.startAnimation(loadAnim(com.android.internal.R.anim.push_down_in, null));
+            }
         }
 
         public void tickerHalting() {
@@ -3747,8 +3757,10 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
                 mStatusBarContents.setVisibility(View.VISIBLE);
                 mStatusBarContents
                         .startAnimation(loadAnim(com.android.internal.R.anim.fade_in, null));
-                //mClockView.setVisibility(View.VISIBLE);
-                //mClockView.startAnimation(loadAnim(com.android.internal.R.anim.fade_in, null));
+                if (mClockLocation == 1) {
+                    mCenterClock.setVisibility(View.VISIBLE);
+                    mCenterClock.startAnimation(loadAnim(com.android.internal.R.anim.fade_in, null));
+                }
             }
             mTickerView.setVisibility(View.GONE);
             // we do not animate the ticker away at this point, just get rid of it (b/6992707)
