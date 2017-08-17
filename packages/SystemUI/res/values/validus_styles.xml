@@ -17,32 +17,6 @@
 
 <resources>
 
-    <!-- Custom Carrier Label -->
-    <style name="TextAppearance.StatusBar.CarrierLabel" parent="@*android:style/TextAppearance.StatusBar.Icon">
-        <item name="android:textSize">@dimen/status_bar_carrier_height</item>
-        <item name="android:textStyle">normal</item>
-        <item name="android:textColor">@color/status_bar_carrier_color</item>
-    </style>
-
-    <!-- Base battery metter drawable style -->
-    <style name="BatteryMeterViewDrawable">
-        <!-- Gravity used for positioning text within the battery meter -->
-        <item name="android:gravity">center</item>
-        <item name="blendMode">clear</item>
-    </style>
-
-    <!-- Battery meter drawable styles -->
-    <style name="BatteryMeterViewDrawable.Portrait"/>
-    <style name="BatteryMeterViewDrawable.Landscape"/>
-    <style name="BatteryMeterViewDrawable.Solid"/>
-    <style name="BatteryMeterViewDrawable.Circle">
-        <item name="blendMode">overlay</item>
-    </style>
-
-    <style name="TextAppearance.StatusBar.WeatherTemp" parent="@*android:style/TextAppearance.StatusBar">
-        <item name="android:textStyle">normal</item>
-    </style>
-
     <style name="TextAppearance.StatusBar.PhoneTicker"
         parent="@*android:style/TextAppearance.StatusBar.Ticker">
         <!-- Note: must be dp to fit in status bar -->
