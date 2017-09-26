@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2014 The Android Open Source Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<vector android:height="64.0dip" android:width="64.0dip" android:viewportWidth="64.0" android:viewportHeight="64.0"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <path android:fillColor="#0097a7" android:pathData="M62.4,32c0,16.789-13.611,30.4-30.4,30.4S
+	1.6,48.789,1.6,32S15.211,1.6,32,1.6S62.4,15.211,62.4,32z" />
+    <path android:fillColor="#fff" android:pathData="M20.767,25.95c-1.077,0-1.95-0.873-1.95-1.95c0-1.077,0.873-1.95,1.95-1.95s1.95,0.873,1.95,1.95
+	C22.717,25.077,21.844,25.95,20.767,25.95z M36.217,25.95c1.077,0,1.95-0.873,1.95-1.95c0-1.077-0.873-1.95-1.95-1.95
+	c-1.077,0-1.95,0.873-1.95,1.95C34.267,25.077,35.14,25.95,36.217,25.95z M51.345,47.813l-11.13-6.426v0.85
+	c0,2.23-2.015,4.037-4.5,4.037h-14.85c-2.485,0-4.5-1.808-4.5-4.037v-6.325c0-1.437,0.843-2.69,2.103-3.406
+	c-3.754-1.013-6.521-4.432-6.521-8.507c0-4.871,3.949-8.82,8.82-8.82c3.374,0,6.303,1.896,7.786,4.68
+	c1.483-2.784,4.412-4.68,7.786-4.68c4.871,0,8.82,3.949,8.82,8.82c0,4.204-2.944,7.715-6.882,8.599
+	c1.169,0.729,1.937,1.939,1.937,3.313v0.85l11.13-6.426V47.813z M30.489,24c0,3.231,2.619,5.85,5.85,5.85s5.85-2.619,5.85-5.85
+	s-2.619-5.85-5.85-5.85S30.489,20.769,30.489,24z M24.723,31.875h7.661c-1.63-0.821-2.973-2.126-3.83-3.735
+	C27.696,29.748,26.353,31.054,24.723,31.875z M20.767,29.85c3.231,0,5.85-2.619,5.85-5.85s-2.619-5.85-5.85-5.85
+	s-5.85,2.619-5.85,5.85S17.536,29.85,20.767,29.85z" />
+</vector>
