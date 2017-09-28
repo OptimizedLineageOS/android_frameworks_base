@@ -16,7 +16,7 @@
     android:width="64dp"
     android:viewportHeight="64"
     android:viewportWidth="64">
-    <path android:fillColor="#0097a7" android:pathData="M62.4,32c0,16.789-13.611,30.4-30.4,30.4S
+    <path android:fillColor="#11c2c2" android:pathData="M62.4,32c0,16.789-13.611,30.4-30.4,30.4S
 	1.6,48.789,1.6,32S15.211,1.6,32,1.6S62.4,15.211,62.4,32z" />
 <group android:scaleX="0.9" android:scaleY="0.9" android:translateX="10" android:translateY="10">
     <group

@@ -28,10 +28,10 @@
     <color name="tertiary_device_default_settings">@color/tertiary_material_settings</color>
     <color name="quaternary_device_default_settings">@color/quaternary_material_settings</color>
 
-    <color name="accent_device_default_700">#19a1af</color>
-    <color name="accent_device_default_light">#19a1af</color>
-    <color name="accent_device_default_dark">#19a1af</color>
-    <color name="accent_device_default_50">#19a1af</color>
+    <color name="accent_device_default_700">#11c2c2 </color>
+    <color name="accent_device_default_light">#11c2c2 </color>
+    <color name="accent_device_default_dark">#11c2c2 </color>
+    <color name="accent_device_default_50">#11c2c2 </color>
 
     <color name="background_device_default_dark">@color/background_material_dark</color>
     <color name="background_device_default_light">@color/background_material_light</color>
