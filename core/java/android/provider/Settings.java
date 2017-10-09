@@ -6766,6 +6766,12 @@ public final class Settings {
         public static final String FORCE_AUTHORIZE_SUBSTRATUM_PACKAGES = "force_authorize_substratum_packages";
 
         /**
+         * Used to store sRGB state
+         * @hide
+         */
+        public static final String SRGB_ENABLED = "srgb_enabled";
+
+        /**
          * Number of rows used for the Quick Settings (portrait)
          *
          * @hide
