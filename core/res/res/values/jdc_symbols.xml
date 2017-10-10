@@ -19,5 +19,6 @@
 <resources>
   <!-- Notifications Battery Really Full -->
   <java-symbol type="integer" name="config_notificationsBatteryReallyFullARGB" />
-
+  <!--sRGB path-->
+  <java-symbol type="string" name="config_srgb_path" />
 </resources>
