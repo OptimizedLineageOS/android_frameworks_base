@@ -507,7 +507,7 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
             super(handler);
         }
 
-        void observe() {
+	void observe() {
             ContentResolver resolver = mContext.getContentResolver();
             resolver.registerContentObserver(Settings.System.getUriFor(
                     Settings.System.STATUS_BAR_SHOW_TICKER),
@@ -543,9 +543,10 @@ public class PhoneStatusBar extends BaseStatusBar implements DemoMode,
 		
 	}
 	
-	@Override
-	public void update() {
-		 boolean mShow4G = Settings.System.getIntForUser(resolver,
+
+	protected void update() {
+		ContentResolver resolver = mContext.getContentResolver();
+		boolean mShow4G = Settings.System.getIntForUser(resolver,
                     Settings.System.SHOW_FOURG, 0, UserHandle.USER_CURRENT) == 1;
 	}
        
