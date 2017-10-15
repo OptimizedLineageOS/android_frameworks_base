@@ -27,7 +27,7 @@
     <!-- Path will be tinted based on battery level -->
     <path
         android:name="battery_level"
-        android:fillColor="#000000"
+        android:fillColor="#1ddbd8"
         android:pathData="@string/battery_portrait_path_empty" />
 
 </vector>
