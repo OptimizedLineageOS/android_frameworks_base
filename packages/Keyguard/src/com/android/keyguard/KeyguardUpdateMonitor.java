@@ -219,27 +219,6 @@ public class KeyguardUpdateMonitor implements TrustManager.TrustListener {
     private int[] mBoostParamVal;
     private int mBoostDuration;
 
-    private PocketManager mPocketManager;
-    private boolean mIsDeviceInPocket;
-    private final IPocketCallback mPocketCallback = new IPocketCallback.Stub() {
-        @Override
-        public void onStateChanged(boolean isDeviceInPocket, int reason) {
-            boolean changed = false;
-            if (reason == PocketManager.REASON_SENSOR) {
-                if (isDeviceInPocket != mIsDeviceInPocket) {
-                    mIsDeviceInPocket = isDeviceInPocket;
-                    changed = true;
-                }
-            } else {
-                changed = isDeviceInPocket != mIsDeviceInPocket;
-                mIsDeviceInPocket = false;
-            }
-            if (changed) {
-                mHandler.sendEmptyMessage(MSG_POCKET_STATE_CHANGED);
-            }
-        }
-    };
-
     private final Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
