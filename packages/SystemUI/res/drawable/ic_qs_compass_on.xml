@@ -13,7 +13,7 @@
 -->
 <vector android:height="64.0dip" android:width="64.0dip" android:viewportWidth="64.0" android:viewportHeight="64.0"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <path android:fillColor="#008B8B" android:pathData="M62.4,32c0,16.789-13.611,30.4-30.4,30.4S
+    <path android:fillColor="#1d6dad" android:pathData="M62.4,32c0,16.789-13.611,30.4-30.4,30.4S
 	1.6,48.789,1.6,32S15.211,1.6,32,1.6S62.4,15.211,62.4,32z" />
     <path android:fillColor="#ffffff" android:pathData="M33.9,11.25l7.8,19.1c0.4,1,0.4,2.2,0,3.3l-7.8,19.1c-0.7,1.7-3.1,1.7-3.8,0l-7.8-19.1c-0.4-1-0.4-2.2,0-3.3
 	l7.8-19.1C30.8,9.55,33.2,9.55,33.9,11.25z M32,27.95c-2.2,0-4,1.8-4,4s1.8,4,4,4s4-1.8,4-4S34.2,27.95,32,27.95z M34,21.95v-4
