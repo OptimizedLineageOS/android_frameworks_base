@@ -15,7 +15,7 @@ Copyright (C) 2014 The Android Open Source Project
     android:height="64dp"
     android:viewportWidth="64.0"
     android:viewportHeight="64.0">
-    <path android:fillColor="#1d6dad" android:pathData="M62.4,32c0,16.789-13.611,30.4-30.4,30.4S
+    <path android:fillColor="#008B8B" android:pathData="M62.4,32c0,16.789-13.611,30.4-30.4,30.4S
 	1.6,48.789,1.6,32S15.211,1.6,32,1.6S62.4,15.211,62.4,32z" android:strokeColor="#00FFFFFF" android:strokeWidth="1" />
     <group android:translateX="8" android:translateY="8">
         <path
