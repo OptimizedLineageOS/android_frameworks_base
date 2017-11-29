@@ -1,21 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2014 The Android Open Source Project
-     Licensed under the Apache License, Version 2.0 (the "License");
-     you may not use this file except in compliance with the License.
-     You may obtain a copy of the License at
-          http://www.apache.org/licenses/LICENSE-2.0
-     Unless required by applicable law or agreed to in writing, software
-     distributed under the License is distributed on an "AS IS" BASIS,
-     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-     See the License for the specific language governing permissions and
-     limitations under the License.
+    Copyright (C) 2016 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 -->
-<vector android:height="64.0dip" android:width="64.0dip" android:viewportWidth="64.0" android:viewportHeight="64.0"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <path android:fillColor="#008B8B" android:pathData="M62.4,32c0,16.789-13.611,30.4-30.4,30.4S
-	1.6,48.789,1.6,32S15.211,1.6,32,1.6S62.4,15.211,62.4,32z" />
-    <path android:fillColor="#ffffff" android:pathData="M44.35,44.35h3.25v3.25h-3.25V44.35z" />
-    <path android:fillColor="#ffffff" android:pathData="M44.35,28.125h3.25v13.888h-3.25V28.125z" />
-    <path android:fillColor="#ffffff" android:pathData="M16.4,47.6h25.872V26H47.6v-0.833v-0.854v-0.146v-0.584v-0.125v-0.583V16.4L16.4,47.6z" />
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+        android:autoMirrored="true"
+        android:width="32.0dp"
+        android:height="32.0dp"
+        android:viewportWidth="24.0"
+        android:viewportHeight="24.0">
+    <path
+        android:pathData="M14.1,14.1l7.9,0.0 0.0,-11.5 -20.0,20.0 12.1,0.0z"
+        android:fillColor="#FFFFFF"/>
+    <path
+        android:pathData="M21.9,17.0l-1.1,-1.1 -1.9,1.9 -1.9,-1.9 -1.1,1.1 1.9,1.9 -1.9,1.9 1.1,1.1 1.9,-1.9 1.9,1.9 1.1,-1.1 -1.9,-1.9z"
+        android:fillColor="#FFFFFF"/>
 </vector>

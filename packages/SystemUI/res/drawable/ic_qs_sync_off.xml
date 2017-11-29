@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<vector android:height="64.0dip" android:width="64.0dip" android:viewportWidth="64.0" android:viewportHeight="64.0"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <path android:fillColor="#008B8B" android:pathData="M62.4,32c0,16.789-13.611,30.4-30.4,30.4S
-	1.6,48.789,1.6,32S15.211,1.6,32,1.6S62.4,15.211,62.4,32z" android:strokeColor="#00FFFFFF" android:strokeWidth="1" />
-    <path android:fillColor="#90ffffff" android:pathData="M26.986,14.807c4.522-1.317,9.374-0.793,13.517,1.441L44.477,12l1.061,11.79l-11.241,0.374l-0.55-0.704
-	l3.792-4.053c-2.431-1.071-5.118-1.409-7.73-0.988L26.986,14.807z M44.655,37.422l2.829,3.621c1.756-3.003,2.646-6.527,2.403-10.201
-	l-4.143,0.274C45.889,33.336,45.487,35.482,44.655,37.422z M45.782,53.192l3.484-2.722l-30.37-38.871l-3.484,2.722l3.918,5.015
-	c-3.559,3.55-5.563,8.524-5.219,13.825l4.145-0.272c-0.253-3.892,1.142-7.554,3.654-10.25L45.782,53.192z M42.11,41.345
-	c-1.586,1.712-3.617,3.041-5.973,3.785c-3.195,1.01-6.635,0.8-9.672-0.536l4.488-4.802L18.475,40.21L19.53,52l3.986-4.256
-	c2.637,1.416,5.559,2.176,8.498,2.176c1.805,0,3.621-0.275,5.371-0.824c2.841-0.898,5.317-2.45,7.309-4.443L42.11,41.345z" />
+<!--
+    Copyright (c) 2015 The CyanogenMod Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <path
+        android:fillColor="#4DFFFFFF"
+        android:pathData="M10 6.35V4.26c-.8 .21 -1.55 .54 -2.23 .96 l1.46 1.46c.25-.12 .5 -.24 .77
+-.33zm-7.14-.94l2.36 2.36C4.45 8.99 4 10.44 4 12c0 2.21 .91 4.2 2.36 5.64L4
+20h6v-6l-2.24 2.24C6.68 15.15 6 13.66 6 12c0-1 .25-1.94 .68 -2.77l8.08 8.08c-.25
+.13 -.5 .25 -.77 .34 v2.09c.8-.21 1.55-.54 2.23-.96l2.36 2.36 1.27-1.27L4.14
+4.14 2.86 5.41zM20 4h-6v6l2.24-2.24C17.32 8.85 18 10.34 18 12c0 1-.25 1.94-.68
+2.77l1.46 1.46C19.55 15.01 20 13.56 20 12c0-2.21-.91-4.2-2.36-5.64L20 4z" />
 </vector>
